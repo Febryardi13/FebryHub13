@@ -1,0 +1,237 @@
+/*  Bintang itu all artinya */
+*{    
+    padding:0;
+    margin: 0;
+}
+
+div{
+    border: 1px yellowgreen solid;
+}
+
+/* root semacam variable */
+:root{
+    --ukuran-font:16px;
+    --latar-color:#0c1328;
+    --tombol-color:#eb0e5b;
+    --text-color:white;
+
+}
+
+body{
+    font-family: 'Lato','Trebuchet MS','sans-serif';
+
+}
+
+/* deklarasi dari variable */
+.header-container{
+    font-size: var(--ukuran-font);
+    color:var(--text-color);
+    background-color:var(--latar-color);
+    /* 20 jarak antara atas & bawah, 40 kanan ke kiri */
+    padding: 20px 50px; 
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.brand-container{
+    margin-right: 30px;
+}
+
+.menu-container{
+    padding-top: 12px;
+    display: flex;
+}
+
+.menu{
+    font-weight: 100;
+    margin-right: 30px;
+}
+
+/* Span didalam menu */
+.menu span{
+    font-size: 12px;
+    padding: 5px;
+}
+
+.menu:hover{
+    color: var(--tombol-color);
+    cursor: pointer;
+    transition: 600ms;
+}
+
+
+/* Style for drop-down menu */
+.dropdown-products{
+    display: flex;
+    width: 690px;
+}
+
+.sub-products{
+    flex-wrap: nowrap ;
+}
+
+
+
+
+
+
+
+
+
+.menukanan-container{
+    margin-left:auto ;
+    padding-top: 0px;
+    display: flex;
+}
+
+.menukanan-container .signin{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.menukanan-container .get-played{
+    border: 2.5px solid var(--tombol-color);
+    width: 130px;
+    border-radius: 25px;
+    font-size: 15px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+
+.menukanan-container .get-played span{
+    color: var(--tombol-color);
+    font-size: 15px;
+}
+
+.bars-container{
+    display: none;
+}
+
+.brand{
+    height: 43px;
+    width: 115px;
+}
+
+/* Header End */
+
+
+
+/* Jumbotron1 Start */
+.jumbotron1-container{
+    height: 120vh;
+    background-color: var(--latar-color);
+    padding-top: 96px;
+    color: var(--text-color);
+}
+
+.jumbotron1-component{
+    padding-top: 90px;
+}
+
+.jumbotron1-textbig{
+    text-align: center;
+    font-family: 'Overpass','Trebuchet MS','sans-serif';
+    font-size: 55px;
+    font-weight: 1000;
+}
+
+.jumbotron1-textsecond{
+    text-align: center;
+    font-size: 24px;
+    line-height: 38.4px;
+    padding-top: 20px;
+}
+
+.button-container{
+    border: 2.5px solid var(--tombol-color);
+    width: 130px;
+    border-radius: 25px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    margin-top: 20px;
+    background-color: var(--tombol-color);
+}
+.jumbotron1-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+
+/* ================== Jumbotron1 Sub Image ================== */
+.jumbotron1-image{
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+}
+
+.img_jumbotron1_car{
+    border: 1px transparent;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.img-jumbotron1-code{
+    position: absolute;
+    top: 490px;
+    left: 963px
+
+}
+
+.img-jumbotron1-color{
+    position: absolute;
+    top: 562px;
+    left: 1003px
+}
+
+.img-jumbotron1-grapic{
+    position: absolute;
+    top: 655px;
+    left: 180px
+}
+
+
+/* Jumbotron1 End */
+
+
+/* For tablet start */
+@media only screen and (max-width:1200px){
+    .menu-container{
+        display: none;
+    }
+
+    .brand{
+        height: 30px;
+        width: 80px;
+    }
+
+    .header-container{
+      padding: 10px 40px;
+    }
+
+    .bars-container{
+        /* Display block untuk hide ketika belum aktif */
+        display: block;
+        margin-left: auto;
+        margin-top: 7px;
+        font-size: 20px;
+    }
+
+    .menukanan-container{
+        display: none;
+    }
+}
+/* For tablet end */
+/* untuk responsive tablet dan lain - lain hanya tinggal diganti (max-width) nya saja */
+
+

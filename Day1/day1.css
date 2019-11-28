@@ -1,0 +1,196 @@
+/*=============================== CSS Style For Home Work 1 ====================================*/
+
+.header{
+    width: auto;
+    height: 100px;
+    background-color: #465881;
+    padding: 20px;
+    font-family: 'lato', cursive, sans-serif;
+    color: blanchedalmond;
+}
+
+.body{
+    width: auto;
+    height: 450px;
+    background-color: white;
+    display: flex;
+    font-family: 'lato', cursive, sans-serif;
+}
+
+.body1{
+    flex: 1;
+    background-color: #26c6d5;
+    padding: 20px;
+    font-family: 'lato', cursive, sans-serif;
+}
+
+.body2{
+    flex: 6;
+    background-color: #ecedee;
+    padding: 20px;
+    font-family: 'lato', cursive, sans-serif;
+}
+
+.footer{
+    width: auto;
+    height: 100px;
+    background-color: #465881;
+    padding: 20px;
+    font-family: 'lato', cursive, sans-serif;
+    color: white;
+}
+
+/*=============================== CSS Style For Home Work 2 ====================================*/
+
+.mainSide{
+    display: flex;
+}
+.sideLink{
+    flex: 1;
+    background-color:  #26c6d5;
+    width: 20%;
+    height: 730px;
+    font-family: 'lato',cursive,sans-serif;
+    border: black solid 1px;
+    padding: 30px;
+    font-family: 'lato', cursive, sans-serif;
+}
+.sideBar{
+    flex: 5;
+    background-color:#ecedee;
+    width: 10%;
+    height: 790px;
+    font-family: 'lati',cursive,sans-serif;
+    border: black solid 1px;
+    display: flexbox;
+    font-family: 'lato', cursive, sans-serif;
+}
+
+.sideBar1{
+    flex: 1;
+    height: 20%;
+    border: tomato solid 1px;
+    padding: 10px;
+    font-family: 'lato', cursive, sans-serif;
+}
+
+.sideBar2{
+    flex: 1;
+    height: 40%;
+    border: springgreen solid 1px;
+    padding: 10px;
+    font-family: 'lato', cursive, sans-serif;
+}
+
+.sideBar3{
+    flex: 1;
+    height: 32%;
+    border: yellow solid 1px;
+    padding: 10px;
+    font-family: 'lato', cursive, sans-serif;
+}
+
+/*=============================== CSS Style For Home Work 3 ====================================*/
+.mainDiv{
+    color: white;
+
+    text-align: center; 
+    line-height: 50px;
+}
+
+.verFlex1{
+    display: flex;
+    width: auto;
+    height: 60px;
+    border: purple solid 1px;
+    text-align: center;
+    margin: 0;
+}
+
+.verFlex1A{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border: purple solid 1px;
+    background-color: rgb(105, 205, 255);
+    
+}
+
+.verFlex1B{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border: purple solid 1px;
+    background-color: rgb(167, 167, 167);
+}
+
+.verFlex1C{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border: purple solid 1px;
+    background-color: rgb(105, 205, 255);
+}
+
+.verFlex2{
+    display: flex;
+    width: auto;
+    height: 60px;
+    border: springgreen solid 1px;
+    
+}
+
+.verFlex2A{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border: springgreen solid 1px;
+    background-color: rgb(167, 167, 167);
+}
+
+.verFlex2B{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border:  springgreen solid 1px;
+    background-color: rgb(105, 205, 255);
+}
+
+.verFlex2C{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border:  springgreen solid 1px;
+    background-color: rgb(167, 167, 167);
+}
+
+.verFlex3{
+    display: flex;
+    width: auto;
+    height: 60px;
+    border: yellow solid 1px;
+}
+
+.verFlex3A{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border: yellow solid 1px;
+    background-color: rgb(105, 205, 255);
+}
+
+.verFlex3B{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border:  yellow solid 1px;
+    background-color: rgb(167, 167, 167);
+}
+
+.verFlex3C{
+    display: flexbox;
+    width: 504px;
+    height: auto;
+    border:  yellow solid 1px;
+    background-color: rgb(105, 205, 255);
+}
