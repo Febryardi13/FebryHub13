@@ -14,15 +14,16 @@ const MySwal = withReactContent(Swal)
 class Homepage extends Component {
     state = { 
         listData : [],
-        isOpen:false
+        isOpen:false,
+        indexEdit:-1
      }
 
     //Dibaca kedua
      componentDidMount(){
          this.setState({
              listData:[
-                 {kegiatan:'Lari', status:true,tanggal:'2019/11/27'},
-                 {kegiatan:'Sarapan', status:false,tanggal:'2019/11/28'},
+                 {kegiatan:'Lari', status:true,tanggal:'2019-11-27'},
+                 {kegiatan:'Sarapan', status:false,tanggal:'2019-11-28'},
              ]
          })
      }
@@ -47,6 +48,36 @@ class Homepage extends Component {
             var newListData=[...this.state.listData,obj]
             this.setState({listData:newListData,isOpen:false})
         }
+    }
+
+    onSaveDataClick = (index)=>{
+        var newKegiatan = this.refs.kegiatan.value
+        var newDate     = this.refs.tanggal.value
+        var newStatus   = this.refs.status.value === "Sudah" ? true : false
+        //console.log(newKegiatan,newStatus,newDate)
+
+        var newData    = this.state.listData
+        
+        var objNewData = {
+                kegiatan:newKegiatan,
+                status:newStatus,
+                tanggal:newDate
+            }
+            newData.splice(index,1,objNewData)
+            this.setState({listData:newData,indexEdit:-1})
+            this.showTodo(newData)
+            console.log(newData)
+    }
+
+    onCancelEditClick=()=>{
+        this.setState({indexEdit:-1})
+        // this.showTodo()
+    }
+
+    onEditDataClick = (editIndex) =>{
+        this.setState({indexEdit:editIndex}) 
+        //console.log(editIndex)
+        this.showTodo()
     }
 
     onDeleteDataClick=(index)=>{
@@ -81,27 +112,57 @@ class Homepage extends Component {
     }
 
     showTodo=()=>{
-        return this.state.listData.map((val,index)=>{
-            return (
-                <tr key={index}>
-                    <td>{index+1}</td>
-                    <td>{val.kegiatan}</td>
-                    <td>{val.status?'Sudah' : 'Belum'}</td>
-                    <td>{val.tanggal}</td>
-
-                    <td>
-                        <button className="btn btn-primary mr-4">Edit</button>
-                        <button onClick={()=>this.onDeleteDataClick(index)} className="btn btn-danger mr-4">Delete</button>
-                    </td>
-                </tr>
-            )
-        })
+            return this.state.listData.map((val,index)=>{
+                if(index===this.state.indexEdit){
+                return (
+                    <tr key={index}>
+                        <td>{index+1}</td>
+                        <td><input type="text" defaultValue={val.kegiatan} ref="kegiatan"/></td>
+                        <td>
+                            {val.status?(
+                            <select ref="status">
+                                <option selected>Sudah</option>
+                                <option >Belum</option>
+                            </select>
+                            ) : (
+                            <select ref="status">
+                                <option>Sudah</option>
+                                <option selected>Belum</option>
+                            </select>
+                            )}
+                        </td>
+                        <td>
+                            <input type="date" ref="tanggal" defaultValue={val.tanggal}/>
+                        </td>
+                        <td>
+                            <button onClick={()=>this.onSaveDataClick(index)} className="btn btn-primary mr-4">Save</button>
+                            <button onClick={()=>this.onCancelEditClick()} className="btn btn-danger mr-4">Cancel</button>
+                        </td>
+                    </tr>
+                )
+            
+        }else{
+                return (
+                    <tr key={index}>
+                        <td>{index+1}</td>
+                        <td>{val.kegiatan}</td>
+                        <td>{val.status?'Sudah' : 'Belum'}</td>
+                        <td>{val.tanggal}</td>
+                        <td>
+                            <button onClick={()=>this.onEditDataClick(index)} className="btn btn-primary mr-4" value='Edit'>Edit</button>
+                            <button onClick={()=>this.onDeleteDataClick(index)} className="btn btn-danger mr-4">Delete</button>
+                        </td>
+                    </tr>
+                )
+        }
+    })
     }
 
     //yang dibaca pertama
     render() { 
         return ( 
             <div>
+                {/* start modal buat add data */}
                 <Modal isOpen={this.state.isOpen} toggle={()=>this.setState({isOpen:false})}>
                     <ModalHeader>
                         Add To Do
@@ -115,6 +176,7 @@ class Homepage extends Component {
                         <button className="btn btn-danger" onClick={()=>this.setState({isOpen:false})}>C A N C E L</button>
                     </ModalFooter>
                 </Modal>
+                {/* End modal buat add data */}
                 <div className="p-5 mx-5 my-5">
                     <Table>
                         <thead>

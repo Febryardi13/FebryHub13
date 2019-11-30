@@ -20,7 +20,7 @@ const Header = (props) => {
 
   return (
     <div>
-      <Navbar color="dark" light expand="md">
+      <Navbar color="info" light expand="md">
         <NavbarBrand href="/">ToDoApp</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
