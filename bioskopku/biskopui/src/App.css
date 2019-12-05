@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+/* div{
+  border: yellow 1px solid;
+} */
+.kartu{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.gambar{
+  transition: 700ms;
+}
+.gambar:hover{
+  transform: scale(1.1);
+  border-radius: 10px;
+
+}
+.gambaar1{
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.kartu{
+  border-radius: 10px;
+  border: transparent;
+  overflow: hidden;
+}
+
+.card-title{
+  text-align: justify;
+}
